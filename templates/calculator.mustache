@@ -1,0 +1,81 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_matrixcalc/calculator
+
+    Example context (json):
+    {
+        Aqui tem que criar o context em inglês
+    }
+}}
+<div class="mod-matrixcalc" data-region="matrixcalc">
+    <div class="matrixcalc-workspace">
+        <section class="matrixcalc-panel" aria-labelledby="matrixcalc-a-title">
+            <h3 id="matrixcalc-a-title">{{#str}}matrixa, mod_matrixcalc{{/str}}</h3>
+            <div class="matrixcalc-size-controls">
+                <label>{{#str}}rows, mod_matrixcalc{{/str}}
+                    <input type="number" value="2" class="form-control" data-matrix="a" data-dimension="rows" min="1" max="10">
+                </label>
+                <span aria-hidden="true">×</span>
+                <label>{{#str}}columns, mod_matrixcalc{{/str}}
+                    <input type="number" value="2" class="form-control" data-matrix="a" data-dimension="cols" min="1" max="10">
+                </label>
+            </div>
+            <div data-matrix-grid="a"></div>
+        </section>
+
+        <section class="matrixcalc-panel" aria-labelledby="matrixcalc-b-title">
+            <h3 id="matrixcalc-b-title">{{#str}}matrixb, mod_matrixcalc{{/str}}</h3>
+            <div class="matrixcalc-size-controls">
+                <label>{{#str}}rows, mod_matrixcalc{{/str}}
+                    <input type="number" value="2" class="form-control" data-matrix="b" data-dimension="rows" min="1" max="10">
+                </label>
+                <span aria-hidden="true">×</span>
+                <label>{{#str}}columns, mod_matrixcalc{{/str}}
+                    <input type="number" value="2" class="form-control" data-matrix="b" data-dimension="cols" min="1" max="10">
+                </label>
+            </div>
+            <div data-matrix-grid="b"></div>
+        </section>
+    </div>
+
+    <div class="matrixcalc-actions" role="group" aria-label="{{#str}}operations, mod_matrixcalc{{/str}}">
+        {{#allowadd}}<button type="button" class="btn btn-primary" data-operation="add">{{#str}}add, mod_matrixcalc{{/str}}</button>{{/allowadd}}
+        {{#allowmultiply}}<button type="button" class="btn btn-primary" data-operation="multiply">{{#str}}multiply, mod_matrixcalc{{/str}}</button>{{/allowmultiply}}
+        {{#allowdeterminant}}<button type="button" class="btn btn-secondary" data-operation="determinant">{{#str}}determinant, mod_matrixcalc{{/str}}</button>{{/allowdeterminant}}
+        {{#allowtranspose}}<button type="button" class="btn btn-secondary" data-operation="transpose">{{#str}}transpose, mod_matrixcalc{{/str}}</button>{{/allowtranspose}}
+        {{#allowinverse}}<button type="button" class="btn btn-secondary" data-operation="inverse">{{#str}}inverse, mod_matrixcalc{{/str}}</button>{{/allowinverse}}
+        <button type="button" class="btn btn-link" data-action="clear">{{#str}}clear, mod_matrixcalc{{/str}}</button>
+    </div>
+
+    <div class="matrixcalc-target d-none" data-region="matrix-target" role="group" aria-label="{{#str}}choosematrix, mod_matrixcalc{{/str}}">
+        <button type="button" class="btn btn-outline-secondary" data-target-matrix="a">A</button>
+        <button type="button" class="btn btn-outline-secondary" data-target-matrix="b">B</button>
+    </div>
+
+    <div class="matrixcalc-feedback alert alert-warning d-none" data-region="feedback" role="alert"></div>
+
+    <section class="matrixcalc-result d-none" data-region="result-section" aria-live="polite">
+        <h3 data-region="result-title">{{#str}}result, mod_matrixcalc{{/str}}</h3>
+        <div data-region="result"></div>
+    </section>
+
+    <section class="matrixcalc-steps d-none" data-region="steps-section">
+        <h3>{{#str}}steps, mod_matrixcalc{{/str}}</h3>
+        <div data-region="steps"></div>
+    </section>
+</div>
