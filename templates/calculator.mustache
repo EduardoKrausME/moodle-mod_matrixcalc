@@ -28,11 +28,11 @@
             <h3 id="matrixcalc-a-title">{{#str}}matrixa, mod_matrixcalc{{/str}}</h3>
             <div class="matrixcalc-size-controls">
                 <label>{{#str}}rows, mod_matrixcalc{{/str}}
-                    <input type="number" value="2" class="form-control" data-matrix="a" data-dimension="rows" min="1" max="10">
+                    <input type="number" value="2" class="form-control" data-matrix="a" data-dimension="rows" min="1" max="{{maxsize}}">
                 </label>
                 <span aria-hidden="true">×</span>
                 <label>{{#str}}columns, mod_matrixcalc{{/str}}
-                    <input type="number" value="2" class="form-control" data-matrix="a" data-dimension="cols" min="1" max="10">
+                    <input type="number" value="2" class="form-control" data-matrix="a" data-dimension="cols" min="1" max="{{maxsize}}">
                 </label>
             </div>
             <div data-matrix-grid="a"></div>
@@ -42,11 +42,11 @@
             <h3 id="matrixcalc-b-title">{{#str}}matrixb, mod_matrixcalc{{/str}}</h3>
             <div class="matrixcalc-size-controls">
                 <label>{{#str}}rows, mod_matrixcalc{{/str}}
-                    <input type="number" value="2" class="form-control" data-matrix="b" data-dimension="rows" min="1" max="10">
+                    <input type="number" value="2" class="form-control" data-matrix="b" data-dimension="rows" min="1" max="{{maxsize}}">
                 </label>
                 <span aria-hidden="true">×</span>
                 <label>{{#str}}columns, mod_matrixcalc{{/str}}
-                    <input type="number" value="2" class="form-control" data-matrix="b" data-dimension="cols" min="1" max="10">
+                    <input type="number" value="2" class="form-control" data-matrix="b" data-dimension="cols" min="1" max="{{maxsize}}">
                 </label>
             </div>
             <div data-matrix-grid="b"></div>
