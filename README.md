@@ -1,15 +1,21 @@
-# mod_matrixcalc - Matrizes
+# mod_matrixcalc - Matrix calculator
 
-Atividade-ferramenta para Moodle que permite trabalhar com matrizes diretamente no curso.
+An interactive Moodle activity for working with matrices directly inside a course. Students can enter matrix values, run the operations enabled by the teacher, and follow the calculation step by step without leaving Moodle.
 
-## Operações
+## Features
 
-- Soma A + B
-- Multiplicação A × B
-- Determinante por eliminação gaussiana
-- Transposta de A ou B
-- Inversa de A ou B por Gauss-Jordan
+- Addition of matrices A + B
+- Multiplication A × B
+- Determinant using Gaussian elimination
+- Transpose of matrix A or B
+- Inverse of matrix A or B using Gauss-Jordan elimination
+- Step-by-step calculation details for every result
+- Teacher-controlled list of available operations
+- Configurable maximum matrix dimension from 2 to 8
+- Support for 1 × n and n × 1 vectors when the selected operation allows them
 
-Cada resultado é acompanhado das contas passo a passo. O professor escolhe quais operações ficam disponíveis e a dimensão máxima das matrizes (2 a 8 na configuração da atividade; o aluno pode trabalhar também com vetores 1 × n ou n × 1 quando a operação permitir).
+The values entered by students are processed in the browser and are not stored by the plugin.
 
-O plugin não salva os valores digitados pelos estudantes.
+## Usage
+
+Add a **Matrix calculator** activity to a course, choose the operations students may use, and set the maximum matrix dimension. Students then open the activity, define the dimensions of matrices A and B, enter their values, and select an operation. For determinant, transpose, and inverse operations, the student chooses which matrix should be used.
