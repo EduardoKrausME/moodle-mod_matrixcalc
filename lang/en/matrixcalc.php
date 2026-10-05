@@ -70,3 +70,4 @@ $string['swappingrows'] = 'Swap rows';
 $string['swaprows'] = 'Swap R{a} and R{b}';
 $string['transpose'] = 'Transpose';
 $string['transposeof'] = 'Transpose of';
+$string['zeropivot'] = 'Pivot in column {column} = 0. Therefore, det({matrix}) = <strong>0</strong>.';
