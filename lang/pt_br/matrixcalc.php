@@ -68,3 +68,4 @@ $string['steps'] = 'Cálculo passo a passo';
 $string['swaprows'] = 'Trocar R{a} com R{b}';
 $string['transpose'] = 'Transposta';
 $string['transposeof'] = 'Transposta de';
+$string['zeropivot'] = 'Pivô da coluna {column} = 0. Logo, det({matrix}) = <strong>0</strong>.';
