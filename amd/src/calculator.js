@@ -84,9 +84,20 @@ define(["jquery"], function($) {
         }
 
         getDimensions(matrixName) {
+            const maxSize = Math.max(1, parseInt(this.options.maxSize, 10) || 1);
+            const readDimension = (dimension) => {
+                const input = this.root.find(`[data-matrix='${matrixName}'][data-dimension='${dimension}']`);
+                const value = parseInt(input.val(), 10);
+                const clamped = Math.min(maxSize, Math.max(1, Number.isFinite(value) ? value : 1));
+                if (value !== clamped) {
+                    input.val(clamped);
+                }
+                return clamped;
+            };
+
             return {
-                rows: parseInt(this.root.find(`[data-matrix='${matrixName}'][data-dimension='rows']`).val(), 10),
-                cols: parseInt(this.root.find(`[data-matrix='${matrixName}'][data-dimension='cols']`).val(), 10),
+                rows: readDimension("rows"),
+                cols: readDimension("cols"),
             };
         }
 
@@ -262,7 +273,10 @@ define(["jquery"], function($) {
 
                 if (Math.abs(work[pivotRow][pivot]) < EPSILON) {
                     determinant = 0;
-                    steps.push(this.stepHtml(`Pivô da coluna ${pivot + 1} = 0. Logo, det(${matrixName.toUpperCase()}) = <strong>0</strong>.`));
+                    steps.push(this.stepHtml(this.interpolate(this.getString("zeropivot"), {
+                        column: pivot + 1,
+                        matrix: matrixName.toUpperCase(),
+                    })));
                     this.showScalarResult(`${this.getString("determinantof")} ${matrixName.toUpperCase()}`, 0);
                     this.showSteps(steps);
                     return;
