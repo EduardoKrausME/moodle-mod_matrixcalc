@@ -72,6 +72,7 @@ $PAGE->requires->strings_for_js([
     "squarerequired",
     "swaprows",
     "transposeof",
+    "zeropivot",
 ], "mod_matrixcalc");
 $PAGE->requires->js_call_amd("mod_matrixcalc/calculator", "init", [$options]);
 
