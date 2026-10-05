@@ -53,7 +53,9 @@ class restore_matrixcalc_activity_task extends restore_activity_task {
      * @return array Return value.
      */
     public static function define_decode_contents(): array {
-        return [];
+        return [
+            new restore_decode_content("matrixcalc", ["intro"], "matrixcalc"),
+        ];
     }
 
     /**
@@ -62,6 +64,9 @@ class restore_matrixcalc_activity_task extends restore_activity_task {
      * @return array Return value.
      */
     public static function define_decode_rules(): array {
-        return [];
+        return [
+            new restore_decode_rule("MATRIXCALCINDEX", "/mod/matrixcalc/index.php?id=$1", "course"),
+            new restore_decode_rule("MATRIXCALCVIEWBYID", "/mod/matrixcalc/view.php?id=$1", "course_module"),
+        ];
     }
 }
